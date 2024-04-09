@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgray;
+    font-family: sans-serif;
+    margin: 0px;
+}
+
+.container {
+    display: grid;
+    /* grid-template-rows: auto auto auto auto; */
+    grid-template-columns: repeat(12, 1fr);
+    /* grid-template-areas:
+        "nav"
+        "side"
+        "main"
+        "footer"; */
+}
+
+#tag {
+    grid-column: span 12;
+    color: white;
+    background: lightseagreen;
+    font-size: 56px;
+}
+
+nav {
+    background: lightseagreen;
+    grid-column: span 6;
+}
+
+nav a {
+    display: inline-block;
+    margin: 0 20px;
+    /* padding: 0px 47px 0px 0px; */
+}
+
+#actions {
+    grid-column: 7 / span 6;
+    justify-self: right;
+}
+
+
+About Me {
+grid-area: side;
+}
+
+Projects {
+grid-area: main;
+}
+
+Contact Me {
+grid-area: footer
+}
