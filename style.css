@@ -1,56 +1,104 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
-    background-color: lightgray;
-    font-family: sans-serif;
-    margin: 0px;
-}
-
-.container {
-    display: grid;
-    /* grid-template-rows: auto auto auto auto; */
-    grid-template-columns: repeat(12, 1fr);
-    /* grid-template-areas:
-        "nav"
-        "side"
-        "main"
-        "footer"; */
-}
-
-#tag {
-    grid-column: span 12;
-    color: white;
-    background: lightseagreen;
-    font-size: 56px;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
 nav {
-    background: lightseagreen;
-    grid-column: span 6;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
 }
 
-nav a {
-    display: inline-block;
-    margin: 0 20px;
-    /* padding: 0px 47px 0px 0px; */
+#nav-links, #actions {
+    display: flex;
+    gap: 10px;
 }
 
-#actions {
-    grid-column: 7 / span 6;
-    justify-self: right;
+nav p, nav button {
+    margin: 0;
+}
+
+#hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+}
+
+#header {
+    grid-column: span 2;
+}
+
+#features-left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+}
+
+#bullet-points-left {
+    text-align: left;
+}
+
+#features-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+    direction:rtl;
+}
+
+#bullet-points-right {
+    text-align: right;
 }
 
 
-About Me {
-grid-area: side;
+
+#cta {
+    text-align: center;
+    padding: 50px;
 }
 
-Projects {
-grid-area: main;
+.social {
+    text-align: center;
+    padding: 50px;
+    position: relative;
+    padding-bottom: 30px; /* Adjust as needed to create space for the circles */
 }
 
-Contact Me {
-grid-area: footer
+ 
+.social::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 40px; /* Diameter of the circle */
+    height: 40px; /* Diameter of the circle */
+    border-radius: 50%; /* To create a circle */
+    background-color: #ff7f50; /* Color of the circle */
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    nav {
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+
+    #nav-links, #actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #hero, #features-left, #features-right, #cta, .social {
+        grid-template-columns: 1fr;
+    }
 }
